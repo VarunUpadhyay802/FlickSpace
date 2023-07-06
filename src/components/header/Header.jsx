@@ -74,8 +74,9 @@ const Header = () => {
     return (
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
-                <div className="logo" onClick={() => navigate("/")}>
-                    <img src={logo} alt="" />
+                <div style={{ color: "white", fontFamily: "cursive" }} onClick={() => navigate("/")}>
+                    <h2>Flick<span style={{ fontFamily: "revert-layer" }}>Space</span></h2>
+
                 </div>
                 <ul className="menuItems">
                     <li
