@@ -19,8 +19,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     const carouselContainer = useRef();
     const { url } = useSelector((state) => state.home);
     const navigate = useNavigate();
-    // const [id, setId] = useState();
-    // Function to handle navigation of carousel items
+
     const navigation = (dir) => {
         const container = carouselContainer.current;
 
@@ -35,7 +34,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
         });
     };
 
-    // Skeleton item for loading state
     const skItem = () => {
         return (
             <div className="skeletonItem">
@@ -49,16 +47,9 @@ const Carousel = ({ data, loading, endpoint, title }) => {
     };
 
     return (
-        <div className="carousel" onClick={() => {
-
-        }} onChange={(e) => {
-            setId(e.target.v)
-        }}>
+        <div className="carousel">
             <ContentWrapper>
-                {/* Render the carousel title if provided */}
                 {title && <div className="carouselTitle">{title}</div>}
-
-                {/* Navigation arrows */}
                 <BsFillArrowLeftCircleFill
                     className="carouselLeftNav arrow"
                     onClick={() => navigation("left")}
@@ -67,10 +58,7 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                     className="carouselRighttNav arrow"
                     onClick={() => navigation("right")}
                 />
-
-                {/* Render items based on loading state */}
                 {!loading ? (
-                    // Render carousel items with data
                     <div className="carouselItems" ref={carouselContainer}>
                         {data?.map((item) => {
                             const posterUrl = item.poster_path
@@ -82,14 +70,17 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                     className="carouselItem"
                                     onClick={() =>
                                         navigate(
-                                            `/${item.media_type || endpoint}/${item.id}`
+                                            `/${item.media_type || endpoint}/${item.id
+                                            }`
                                         )
                                     }
                                 >
                                     <div className="posterBlock">
                                         <Img src={posterUrl} />
                                         <CircleRating
-                                            rating={item.vote_average.toFixed(1)}
+                                            rating={item.vote_average.toFixed(
+                                                1
+                                            )}
                                         />
                                         <Genres
                                             data={item.genre_ids.slice(0, 2)}
@@ -100,7 +91,9 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                                             {item.title || item.name}
                                         </span>
                                         <span className="date">
-                                            {dayjs(item.release_Date).format("MMM D, YYYY")}
+                                            {dayjs(item.release_Date).format(
+                                                "MMM D, YYYY"
+                                            )}
                                         </span>
                                     </div>
                                 </div>
@@ -108,7 +101,6 @@ const Carousel = ({ data, loading, endpoint, title }) => {
                         })}
                     </div>
                 ) : (
-                    // Render skeleton items during loading state
                     <div className="loadingSkeleton">
                         {skItem()}
                         {skItem()}
