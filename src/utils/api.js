@@ -4,6 +4,7 @@ const TMDB_TOKEN=import.meta.env.VITE_APP_TMDB_TOKEN;
 const headers={
     Authorization:"Bearer " +TMDB_TOKEN,
 };
+//params only used in explore page
 export const fetchDataFromApi=async(url,params)=>{
     try{
         const{data}=await axios.get((BASE_URL + url),{
