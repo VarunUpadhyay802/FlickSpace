@@ -74,7 +74,7 @@ const Header = () => {
     return (
         <header className={`header ${mobileMenu ? "mobileView" : ""} ${show}`}>
             <ContentWrapper>
-                <div style={{ color: "white", fontFamily: "cursive" }} onClick={() => navigate("/")}>
+                <div style={{ color: "white", }} onClick={() => navigate("/")}>
                     <h2>Flick<span style={{ fontFamily: "revert-layer" }}>Space</span></h2>
 
                 </div>

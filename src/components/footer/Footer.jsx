@@ -9,8 +9,10 @@ import {
 import ContentWrapper from "../contentWrapper/ContentWrapper";
 
 import "./style.scss";
+import { Link, useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
   return (
     <footer className="footer">
       <ContentWrapper>
@@ -22,22 +24,53 @@ const Footer = () => {
           <li className="menuItem">FAQ</li>
         </ul>
         <div className="infoText">
-          Stay connected with FlickSpace: Follow us on social media for the latest movie updates, exclusive
-          content, and engaging discussions. Join our vibrant community of film enthusiasts and be a part
-          of the conversation that celebrates the magic of cinema
+          Stay connected with FlickSpace: Follow us on social media for the
+          latest movie updates, exclusive content, and engaging discussions.
+          Join our vibrant community of film enthusiasts and be a part of the
+          conversation that celebrates the magic of cinema
         </div>
         <div className="socialIcons">
-          <span className="icon">
+        <span className="icon" style={{color:"white"}}>
+        <Link
+              to="https://www.linkedin.com/in/varun--upadhyay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{color:"white"}} 
+            >
             <FaFacebookF />
+            </Link>
+            
           </span>
-          <span className="icon">
-            <FaInstagram />
+          <span className="icon" style={{color:"white" }}>
+          <Link
+              to="https://www.linkedin.com/in/varun--upadhyay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{color:"white"}} 
+            >
+               <FaInstagram />
+            </Link>
+         
           </span>
-          <span className="icon">
-            <FaTwitter />
+          <span className="icon" style={{color:"white" }}>
+          <Link
+              to="https://www.linkedin.com/in/varun--upadhyay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{color:"white"}} 
+            >
+             <FaTwitter />
+            </Link>
           </span>
-          <span className="icon">
-            <FaLinkedin />
+          <span className="icon" >
+            <Link
+              to="https://www.linkedin.com/in/varun--upadhyay/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{color:"white"}} 
+            >
+              <FaLinkedin />
+            </Link>
           </span>
         </div>
       </ContentWrapper>
