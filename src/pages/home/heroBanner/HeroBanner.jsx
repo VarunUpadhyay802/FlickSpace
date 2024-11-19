@@ -11,7 +11,7 @@ const HeroBanner = () => {
   const navigate = useNavigate();
   const [query, setQuery] = useState("");
   const { url } = useSelector((state) => state.home);
-  //we have extracted url from home
+
   const { data, loading } = useFetch("/movie/upcoming");
   useEffect(() => {
     const bg =
@@ -26,9 +26,11 @@ const HeroBanner = () => {
     }
   };
 
+
   const onChange = (e) => {
     setQuery(e.target.value);
   };
+
 
   return (
     <div>

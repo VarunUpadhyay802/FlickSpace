@@ -10,7 +10,6 @@ import { fetchDataFromApi } from "../../utils/api";
 import ContentWrapper from "../../components/contentWrapper/ContentWrapper";
 import MovieCard from "../../components/movieCard/MovieCard";
 import Spinner from "../../components/spinner/Spinner";
-//learn and make grasp on the sseleelector library
 let filters = {}; // Variable to store filter options
 
 const sortbyData = [
