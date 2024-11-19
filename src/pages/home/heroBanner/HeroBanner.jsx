@@ -57,7 +57,7 @@ const HeroBanner = () => {
                   onKeyUp={searchQueryHandler}
                   onChange={onChange}
                 />
-                <button>Search</button>
+                <button onClick={()=>{}}>Search</button>
               </div>
             </div>
           </div>
